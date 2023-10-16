@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <form id="form" class="input-control" onsubmit="return false">
+            <h1>Sign Up</h1>
+            <label for="usr">Username:</label>
+            <input type="text" name="usr" id="usr" required>
+            <div class="error" id="usr-error">Username cannot be empty!</div><br>
+            <label for="eml">Email:</label>
+            <input type="email" name="eml" id="eml" required>
+            <div class="error" id="eml-error">The email must be in standard format (e.g., user@example.com)!</div><br>
+            <label for="pwd">Password:</label>
+            <input type="password" name="pwd" id="pwd" required>
+            <div class="error" id="pwd-error">Password must contain atleast 8 characters!</div><br>
+            <label for="cpwd">Confirm Password:</label>
+            <input type="password" name="cpwd" id="cpwd" required>
+            <div class="error" id="cpwd-error">The field must match the password field!</div><br>
+            <button type="submit" onclick="validate()">submit</button>
+        </form>
+    <script>
+        function validate() {
+            let form = document.getElementById("form")
+            let usr = document.getElementById("usr");
+            let eml = document.getElementById("eml");
+            let pwd = document.getElementById("pwd");
+            let cpwd = document.getElementById("cpwd");
+            let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (usr.value == "") {
+                if (!form.classList.contains("error")) {
+                    form.classList.add("error");
+                }
+                document.getElementById("usr-error").style.display="block";
+            } else if (!eml.value.match(validRegex)) {
+                if (!form.classList.contains("error")) {
+                    form.classList.add("error");
+                }
+                document.getElementById("eml-error").style.display="block";
+            } else if (pwd.value.length < 8) {
+                if (!form.classList.contains("error")) {
+                    form.classList.add("error");
+                }
+                document.getElementById("pwd-error").style.display="block";
+            } else if (cpwd.value != pwd.value) {
+                if (!form.classList.contains("error")) {
+                    form.classList.add("error");
+                }
+                document.getElementById("cpwd-error").style.display="block";
+            } else {
+                if (form.classList.contains("error")) {
+                    form.classList.replace("error", "success");
+                } else {
+                    form.classList.add("success");
+                }
+                var divs = document.querySelectorAll("div");
+                for (var i = 0; i < divs.length; i++) {
+                    divs[i].style.display="none";
+                }
+            }
+        }
+    </script>
+    </body>
+</html>
