@@ -73,8 +73,8 @@
         <div class="numberText">8/8</div>
         <img src="images/H.png" alt="Gallery image slideshow" class="slideshow-img">
       </div>
-      <a class="prev" onclick="plusSlides(-1)">Previous</a>
-      <a class="next" onclick="plusSlides(1)">Next</a>
+      <a class="prev" onclick="plusSlides(-1)"><</a>
+      <a class="next" onclick="plusSlides(1)">></a>
     </div>
    <!-- Call to Action -->
    <section class="cta-container">
@@ -111,7 +111,7 @@
     if (n > slides.length) {
       slideIndex = 1;
     } 
-    if (n < slides.length) {
+    if (n < 1) {
       slideIndex = slides.length;
     }
     for (i = 0; i < slides.length; i++) {
