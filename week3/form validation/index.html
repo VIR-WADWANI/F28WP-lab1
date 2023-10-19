@@ -20,7 +20,7 @@
             <label for="cpwd">Confirm Password:</label>
             <input type="password" name="cpwd" id="cpwd" required>
             <div class="error" id="cpwd-error">The field must match the password field!</div><br>
-            <button type="submit" onclick="validate()">submit</button>
+            <button type="submit" onclick="check()">submit</button>
         </form>
     <script>
         function validate() {
@@ -63,6 +63,22 @@
                 }
             }
         }
+
+        function check() {
+            if (form.classList.contains("success")) {
+                var ins = document.querySelectorAll("input");
+                for (var i = 0; i < ins.length; i++) {
+                    ins[i].value = "";
+                }
+                form.classList.remove("success");
+            }
+        }
+
+        document.getElementById("usr").addEventListener("input", validate);
+        document.getElementById("eml").addEventListener("input", validate);
+        document.getElementById("pwd").addEventListener("input", validate);
+        document.getElementById("cpwd").addEventListener("input", validate);
+
     </script>
     </body>
 </html>
