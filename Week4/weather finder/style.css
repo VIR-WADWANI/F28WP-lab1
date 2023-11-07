@@ -35,7 +35,7 @@ button {
 #weather-container p {
     font-size: 1.2em;
     font-weight: bold;
-    background: linear-gradient(45deg, #160817, #8b0285);
+    background: linear-gradient(45deg, #2c102e, #8b0285);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
