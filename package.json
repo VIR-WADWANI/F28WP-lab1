@@ -1,0 +1,23 @@
+{
+  "name": "f28wp-lab1",
+  "version": "1.0.0",
+  "description": "Week3 Lab: Worked on creating an image slideshow in the gallery page of the website using javascript. There were some challenges in understanding how to implement the javascript properly and how to use the buttons and the functions but were cleared out while doing the lab work. Also worked on creating an image carousel in the index page of website that would automatically change images. Learnt to use some new functions to help with the work and to implement it properly, like the setInterval function to set a time interval in which the function is called and run agian. Created a forms validation page in seperate html file. It implemented some form tags and attributes, and using the css provided, had to implement the javascript to make the form function as required. Faced some issues in implementing the classes on diff html elements using javascript and later got it working after some research and study on javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon nodejs/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.0.1"
+  }
+}
